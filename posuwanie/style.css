@@ -1,0 +1,63 @@
+.rect {
+	width: 80px;
+	height: 25px;
+	color: white;
+	text-align: center;
+	border-radius: 10px;
+}
+.red {
+	position: absolute;
+	background-color: red;
+	top: 50px;
+}
+.red:hover {
+	cursor: move;
+}
+.blue {
+	position: absolute;
+	background-color: blue;
+}
+.blue:hover {
+	cursor: move;
+}
+.grey{
+	position: absolute;
+	background-color: gray;
+	top: 100px;
+	left: 100px;
+}
+.grey:hover {
+	cursor: move;
+}
+.brown{
+	position: absolute;
+	background-color: burlywood;
+	top: 100px;
+}
+
+.brown:hover {
+	cursor: move;
+}
+
+.lava{
+	position: absolute;
+	background-color: crimson;
+	top: 100px;
+	left:100px;
+}
+.lava:hover {
+	cursor: move;
+}
+
+.mud{
+	position: absolute;
+	background-color: brown;
+	top: 150px;
+	left:100px;
+}
+.mud:hover {
+	cursor: move;
+}
+body{
+	background-color: lightgray;
+}
