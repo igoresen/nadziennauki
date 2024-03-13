@@ -10,10 +10,24 @@ const lavaRect = document.querySelector(".lava");
 
 const mudRect = document.querySelector(".mud");
 
-//uruchamia znikanie na sam poczatek
+
+const instrukcja = document.querySelector(".instrukcja");
+
+//uruchamia znikanie lub pojawianie na sam poczatek
 hideGrey();
 hideLava();
 hideMud();
+hideBlue();
+hideRed();
+hideBrown();
+showText();
+
+function start(){
+	hideText();
+	showRed();
+	showBlue();
+	showBrown();
+}
 
 function przesunKloca(event) {
 	//pobiera ci rozne wartosci z elementu przeciaganego (x, y, left, top)
@@ -30,7 +44,6 @@ function przesunKloca(event) {
 	//dodaje do top strone w ktr myszką przesuwasz (+1 / -1) za kazdym razem gdy przesuwasz myszka przez co kloc leci ci za myszka w gore i w dol
 	event.target.style.top = `${topValue + event.movementY}px`;
 
-	console.log(czyStykaja(redRect, blueRect));
 	if(czyStykaja(redRect, blueRect)===true){
 		hideBlue();
 		hideRed();
@@ -47,15 +60,34 @@ function przesunKloca(event) {
 		showMud();
 	}
 }
+	//instrukcja
+function hideText(){
+			instrukcja.style.display = "none";
+}
+function showText(){
+			instrukcja.style.display = "block";
+}
 	//znika divy
+//blue
 function hideBlue(){
 			blueRect.style.display = "none";
 }
+function showBlue(){
+			blueRect.style.display ="block";
+}
+//red
 function hideRed(){
 			redRect.style.display = "none";
 }
+function showRed(){
+			redRect.style.display ="block";
+}
+//brown
 function hideBrown(){
 			brownRect.style.display = "none";
+}
+function showBrown(){
+			brownRect.style.display = "block";
 }
 //grey
 function hideGrey(){
@@ -66,18 +98,19 @@ function showGrey(){
 }
 //lava
 function hideLava(){
-	lavaRect.style.display = "none";
+			lavaRect.style.display = "none";
 }
 function showLava(){
-	lavaRect.style.display ="block";
+			lavaRect.style.display ="block";
 }
 //mud
 function hideMud(){
-	mudRect.style.display = "none";
+			mudRect.style.display = "none";
 }
 function showMud(){
-	mudRect.style.display ="block";
+			mudRect.style.display ="block";
 }
+
 
 function czyStykaja(element1, element2) {
 	//https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
